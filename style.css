@@ -50,6 +50,11 @@ nav {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.8);
+  padding: 10px;
 }
 
 nav button {
@@ -60,36 +65,12 @@ nav button {
   font-size: 1em;
   cursor: pointer;
   border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
-.item {
-  padding: 20px;
-  background-color: rgba(0,0,0,0.6);
-  margin: 10px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.item img {
-  width: 200px;
-  border-radius: 8px;
-}
-
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;
-}
-
-.grid-tab {
-  display: grid;
-  grid-template-columns: repeat(2, 45%);
-  justify-content: center;
-  gap: 12px;
-  padding: 12px;
-  max-width: 100%;
-  margin: 0 auto;
+nav button.active {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
 }
 
 .item {
@@ -104,6 +85,41 @@ body, html {
   width: 100px;
   height: auto;
   margin-bottom: 6px;
+  border-radius: 8px;
+}
+
+.grid-tab {
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#promo-banner .item {
+  background-color: rgba(255, 140, 0, 0.75);
+  margin: 10px auto;
+  max-width: 90%;
+  padding: 15px;
+}
+
+#promo-banner h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 480px) {
